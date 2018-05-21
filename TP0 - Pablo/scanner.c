@@ -7,30 +7,30 @@
 #include "scanner.h"
 
 Token scanner (char* cadena){
-	Token token;
-	Estado estado = E0;
+    Token token;
+    Estado estado = E0;
 
     while(estado != FDC && cadena[pos] != '\0'){
         switch(estado){
-		case E0:
+        case E0:
             if(isalpha(cadena[pos])){
-				token = INDENTIFICADOR;
-				estado = E1;
-			}
-			else{
-				if(isdigit(cadena[pos])){
-					token = CONSTANTE;
-					estado = E2;
-				}
-				else{
-					if(!isspace(cadena[pos])){
-						token = ERROR;
-						estado = E3;
-					}
-				}
-			}
-			pos++;
-			break;
+                token = INDENTIFICADOR;
+                estado = E1;
+            }
+            else{
+                if(isdigit(cadena[pos])){
+                    token = CONSTANTE;
+                    estado = E2;
+                }
+                else{
+                    if(!isspace(cadena[pos])){
+                        token = ERROR;
+                        estado = E3;
+                    }
+                }
+            }
+            pos++;
+            break;
 		case E1:
 			if(isalpha(cadena[pos]) || isdigit(cadena[pos])){
 				estado = E1;
