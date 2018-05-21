@@ -10,10 +10,10 @@ Token scanner (char* cadena){
 	Token token;
 	Estado estado = E0;
 
-	while(estado != FDC && cadena[pos] != '\0'){
-		switch(estado){
+    while(estado != FDC && cadena[pos] != '\0'){
+        switch(estado){
 		case E0:
-			if(isalpha(cadena[pos])){
+            if(isalpha(cadena[pos])){
 				token = INDENTIFICADOR;
 				estado = E1;
 			}
@@ -29,7 +29,7 @@ Token scanner (char* cadena){
 					}
 				}
 			}
-            pos++;
+			pos++;
 			break;
 		case E1:
 			if(isalpha(cadena[pos]) || isdigit(cadena[pos])){
