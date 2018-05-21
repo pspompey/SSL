@@ -1,9 +1,3 @@
-/*
- * scanner.c
- *
- *  Created on: 20/5/2018
- *      Author: Pablo
- */
 #include "scanner.h"
 
 Token scanner (char* cadena){
@@ -31,37 +25,37 @@ Token scanner (char* cadena){
             }
             pos++;
             break;
-		case E1:
-			if(isalpha(cadena[pos]) || isdigit(cadena[pos])){
-				estado = E1;
-				pos++;
-			}
-			else{
-				estado = FDC;
-			}
-			break;
-		case E2:
-			if(isdigit(cadena[pos])){
-				estado = E2;
-				pos++;
-			}
-			else{
-				estado = FDC;
-			}
-			break;
-		case E3:
-			if(isalpha(cadena[pos]) || isdigit(cadena[pos]) || isspace(cadena[pos])){
-				estado = FDC;
-			}
-			else{
-				estado = E3;
-				pos++;
-			}
-			break;
-		default:
-			printf("No funcionó el scanner\n");
-			break;
-		}
-	}
-	return token;
+        case E1:
+            if(isalpha(cadena[pos]) || isdigit(cadena[pos])){
+                estado = E1;
+                pos++;
+            }
+            else{
+                estado = FDC;
+            }
+            break;
+        case E2:
+            if(isdigit(cadena[pos])){
+                estado = E2;
+                pos++;
+            }
+            else{
+                estado = FDC;
+            }
+            break;
+        case E3:
+            if(isalpha(cadena[pos]) || isdigit(cadena[pos]) || isspace(cadena[pos])){
+                estado = FDC;
+            }
+            else{
+                estado = E3;
+                pos++;
+            }
+            break;
+        default:
+            printf("No funcionó el scanner\n");
+            break;
+        }
+    }
+    return token;
 }
