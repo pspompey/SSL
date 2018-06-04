@@ -20,9 +20,8 @@
 Token scanner (char* cadena){
     Token token;
     Estado estado = E0;
-    bool fdc = false;
 
-    while(!fdc && cadena[pos] != '\0'){
+    while(estado != E5 && cadena[pos] != '\0'){
         switch(estado){
         case E0:
             if(isalpha(cadena[pos])){
@@ -72,9 +71,6 @@ Token scanner (char* cadena){
             break;
         case E4:
             estado = E5;
-            break;
-        case E5:
-            fdc = true;
             break;
         default:
             printf("No funcionó el scanner\n");
