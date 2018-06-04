@@ -3,6 +3,7 @@
 
 #include <ctype.h>
 #include <stdio.h>
+#include <stdbool.h>
 
 typedef enum Token{
 	ERROR,
@@ -15,7 +16,8 @@ typedef enum Estado{
 	E1,
 	E2,
 	E3,
-	FDC
+	E4,
+	E5
 }Estado;
 
 int pos;
