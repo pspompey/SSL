@@ -1,3 +1,18 @@
+/*
+TP0  –  2018
+
+Título: Un escáner elemental
+
+Grupo N° 03
+
+Apellido y Nombre	            E-mail	     		        Legajo 
+-----------------------------------------------------------------------
+MARIÑO AUGUSTO			        augusto.8121@gmail.com	    159.754-1
+MIRABILE VIOLA FERNANDO PABLO	fpmirabile@gmail.com	    153.689-8
+POMPEY PABLO SEBASTIAN		    pompeypablo@hotmail.com     157.181-3
+YAÑEZ AGUSTIN EMANUEL		    agustin.y@outlook.com 	    160.039-4
+
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include "scanner.h"
@@ -8,7 +23,7 @@ int main()
     int cantConstanteEntera = 0;
     int cantError = 0;
     c = 0;
-    while(10 != c){
+    while(EOF != c){
         Valor resultado = detectar();
             if(identificador == resultado){
                 printf("Identificador \n");
