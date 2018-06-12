@@ -5,12 +5,12 @@ Título: Un escáner elemental
 
 Grupo N° 03
 
-Apellido y Nombre	        E-mail	     		    Legajo 
+Apellido y Nombre				E-mail	     		    	Legajo 
 -----------------------------------------------------------------------
-MARIÑO AUGUSTO			augusto.8121@gmail.com	    159.754-1
+MARIÑO AUGUSTO					augusto.8121@gmail.com	    159.754-1
 MIRABILE VIOLA FERNANDO PABLO	fpmirabile@gmail.com	    153.689-8
-POMPEY PABLO SEBASTIAN		pompeypablo@hotmail.com     157.181-3
-YAÑEZ AGUSTIN EMANUEL		agustin.y@outlook.com 	    160.039-4
+POMPEY PABLO SEBASTIAN			pompeypablo@hotmail.com     157.181-3
+YAÑEZ AGUSTIN EMANUEL			agustin.y@outlook.com 	    160.039-4
 
 */
 
@@ -18,39 +18,21 @@ YAÑEZ AGUSTIN EMANUEL		agustin.y@outlook.com 	    160.039-4
 #include <stdlib.h>
 #include <string.h>
 
-// Tamaño máximo de buffer.
-#define STRING_MAXSIZE 1024
-#define STRING_1024 malloc(STRING_MAXSIZE*sizeof(char))
-
 struct contadorToken{
     int identificador;
     int constante;
     int error;
 }contadorToken;
 
-void string_append(char** original, char* string_to_add) {
-	*original = realloc(*original, strlen(*original) + strlen(string_to_add) + 1);
-	strcat(*original, string_to_add);
-}
-
 int main () {
-    char *input = STRING_1024;
-    char *cadena = strdup("");
+    Token token;
 
     contadorToken.identificador = 0;
     contadorToken.constante = 0;
     contadorToken.error = 0;
-    pos = 0;
 
-
-    while(scanf("%s", input) != EOF){
-        string_append(&cadena, input);
-        string_append(&cadena, "\n");
-    }
-    printf("\n");
-
-    while(cadena[pos] != '\0'){
-        switch(scanner(cadena)){
+    while((token = scanner()) != FDT){
+        switch(token){
             case INDENTIFICADOR:
                 printf("Identificador\n");
                 contadorToken.identificador++;
