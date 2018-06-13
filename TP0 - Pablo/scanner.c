@@ -57,15 +57,15 @@ Token scanner (){
 		case 4:
 			token = INDENTIFICADOR;
 			break;
- 		case 5:
+		case 5:
 			token = CONSTANTE;
 			break;
 		case 6:
 			token = ERROR;
 			break;
 		case 100:
-    	token = FDT;
-     	break;
+			token = FDT;
+			break;
 		default:
 			break;
 	}
