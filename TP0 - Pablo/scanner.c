@@ -1,14 +1,14 @@
 /*
- **        | Letra    Digito	 Error	     Espacio     EOF
- **   -----+--------------------------------------------------
- **      0 |   1        2          3            0        100
- **      1 |   1        1          4            4         4
- **      2 |   5        2          5            5         5
- **     3+ |   6        6          3            6         6
- **     4+ |   -        -          -            -         -
- **     5+ |   -        -          -            -         -
- **     6+ |   -        -          -            -         -
- **   100+ |   -        -          -            -         -
+ **        |	Letra    Digito	 			Error				Espacio     EOF
+ **   -----+-----------------------------------------------------
+ **      0 |   	1        2          	3            0        100
+ **      1 |   	1        1          	4            4         4
+ **      2 |   	5        2          	5            5         5
+ **     3+ |   	6        6          	3            6         6
+ **     4+ |   	-        -          	-            -         -
+ **     5+ |   	-        -          	-            -         -
+ **     6+ |   	-        -          	-            -         -
+ **   100+ |   	-        -          	-            -         -
  **
  **  Letra -> Lowercase | Uppercase
  **  Digito -> 0..9
@@ -44,28 +44,28 @@ Token scanner (){
 	Token token;
 	int estadoActual = 0;
 	static int tablaTT[4][5] = {{1, 2, 3, 0, 100},
-				    {1, 1, 4, 4, 4},
-				    {5, 2, 5, 5, 5},
-		  		    {6, 6, 3, 6, 6}};
+															{1, 1, 4, 4, 4},
+															{5, 2, 5, 5, 5},
+															{6, 6, 3, 6, 6}};
 
 	do{
 		input = getchar();
-        	estadoActual = tablaTT[estadoActual][columna(input)];
+		estadoActual = tablaTT[estadoActual][columna(input)];
 	}while(!estadoFinal(estadoActual));
 
 	switch(estadoActual){
 		case 4:
 			token = INDENTIFICADOR;
 			break;
-        	case 5:
+ 		case 5:
 			token = CONSTANTE;
 			break;
 		case 6:
 			token = ERROR;
 			break;
-        	case 100:
-            		token = FDT;
-            		break;
+		case 100:
+    	token = FDT;
+     	break;
 		default:
 			break;
 	}
