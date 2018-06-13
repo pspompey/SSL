@@ -1,10 +1,10 @@
 /*
  **        | Letra   Digito   Puntuacion     Espacio    fdc
  **   -----+------------------------------------------------
- **     E0 |  E1       E2         E3           E0       E99
- **     E1 |  E1       E1         E99          E99      E99
- **     E2 |  E99      E2         E99          E99      E99
- **     E3 |  E99      E99        E3           E99      E99
+ **      0 |   1        2          3            0       100
+ **      1 |   1        1          4            4       100
+ **      2 |   5        2          5            5       100
+ **      3 |   6        6          3            6      100
  **
  **  Letra -> Lowercase | Uppercase
  **  Digito -> 0..9
