@@ -5,12 +5,12 @@ Título: Un escáner elemental
 
 Grupo N° 03
 
-Apellido y Nombre			    E-mail	     		    	Legajo 
+Apellido y Nombre               E-mail                      Legajo 
 -----------------------------------------------------------------------
-MARIÑO AUGUSTO					augusto.8121@gmail.com	    159.754-1
-MIRABILE VIOLA FERNANDO PABLO	fpmirabile@gmail.com	    153.689-8
-POMPEY PABLO SEBASTIAN			pompeypablo@hotmail.com     157.181-3
-YAÑEZ AGUSTIN EMANUEL			agustin.y@outlook.com 	    160.039-4
+MARIÑO AUGUSTO                  augusto.8121@gmail.com      159.754-1
+MIRABILE VIOLA FERNANDO PABLO   fpmirabile@gmail.com        153.689-8
+POMPEY PABLO SEBASTIAN          pompeypablo@hotmail.com     157.181-3
+YAÑEZ AGUSTIN EMANUEL           agustin.y@outlook.com       160.039-4
 
 */
 
