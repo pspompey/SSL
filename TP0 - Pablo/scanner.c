@@ -18,14 +18,6 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-typedef enum Estado{
-	E0,
-	E1,
-	E2,
-	E3,
-	E99
-}Estado;
-
 int input;
 
 int columna(int c){
@@ -36,37 +28,45 @@ int columna(int c){
 	else return 2;
 }
 
+int estadoFinal(int e){
+    switch(e){
+    case 0: case 1: case 2: case 3:
+        return 0;
+    }
+    return 1;
+}
+
 Token scanner (){
     Token token;
-	Estado estadoActual = E0;
-	static Estado tablaTT[4][5] = {{E1, E2, E3, E0, E99},
-								   {E1, E1, E99, E99, E99},
-								   {E99, E2, E99, E99, E99},
-								   {E99, E99, E3, E99, E99}};
+	int estadoActual = 0;
+	static int tablaTT[4][5] = {{1, 2, 3, 0, 100},
+								   {1, 1, 4, 4, 100},
+								   {5, 2, 5, 5, 100},
+								   {6, 6, 3, 6, 100}};
 
 	do{
-    input = getchar();
-    estadoActual = tablaTT[estadoActual][columna(input)];
-    switch(estadoActual){
-        case E1:
+        input = getchar();
+        estadoActual = tablaTT[estadoActual][columna(input)];
+	}while(!estadoFinal(estadoActual));
+
+	switch(estadoActual){
+	    case 4:
             token = INDENTIFICADOR;
 			break;
-        case E2:
+        case 5:
 			token = CONSTANTE;
 			break;
-		case E3:
+		case 6:
 			token = ERROR;
 			break;
+        case 100:
+            token = FDT;
+            break;
 		default:
 			break;
-		}
-
-	}while(estadoActual != E99);
+    }
 
     ungetc(input, stdin);
-	if(input == EOF){
-		token = FDT;
-    }
 
     return token;
 }
