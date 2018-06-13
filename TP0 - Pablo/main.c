@@ -17,6 +17,7 @@ YAÑEZ AGUSTIN EMANUEL			agustin.y@outlook.com 	    160.039-4
 #include "scanner.h"
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 
 struct contadorToken{
     int identificador;

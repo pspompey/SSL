@@ -1,18 +1,22 @@
 /*
- **        | Letra   Digito   Puntuacion     Espacio    fdc
- **   -----+------------------------------------------------
- **      0 |   1        2          3            0       100
- **      1 |   1        1          4            4       100
- **      2 |   5        2          5            5       100
- **      3 |   6        6          3            6      100
+ **        | Letra    Digito	 Error		 Espacio     EOF
+ **   -----+--------------------------------------------------
+ **      0 |   1        2          3            0        100
+ **      1 |   1        1          4            4         4
+ **      2 |   5        2          5            5         5
+ **     3+ |   6        6          3            6         6
+ **     4+ |   -        -          -            -         -
+ **     5+ |   -        -          -            -         -
+ **     6+ |   -        -          -            -         -
+ **   100+ |   -        -          -            -         -
  **
  **  Letra -> Lowercase | Uppercase
  **  Digito -> 0..9
- **  Puntuacion -> ! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | } ~
+ **  Error -> ! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | } ~
+ **  Espacio -> tab | newline | vertical tab | form feed | carriage return | space
  **  Lowercase -> a..z
  **  Uppercase ->  A..Z
  */
-
 #include "scanner.h"
 #include <ctype.h>
 #include <stdio.h>
@@ -40,9 +44,9 @@ Token scanner (){
     Token token;
 	int estadoActual = 0;
 	static int tablaTT[4][5] = {{1, 2, 3, 0, 100},
-								   {1, 1, 4, 4, 100},
-								   {5, 2, 5, 5, 100},
-								   {6, 6, 3, 6, 100}};
+	{1, 1, 4, 4, 4},
+	{5, 2, 5, 5, 5},
+	{6, 6, 3, 6, 6}};
 
 	do{
         input = getchar();

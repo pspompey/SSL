@@ -1,7 +1,6 @@
 #ifndef SCANNER_H_
 #define SCANNER_H_
 
-
 typedef enum Token{
 	ERROR,
 	INDENTIFICADOR,
