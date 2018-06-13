@@ -1,5 +1,5 @@
 /*
- **        | Letra    Digito	 Error		 Espacio     EOF
+ **        | Letra    Digito	 Error	     Espacio     EOF
  **   -----+--------------------------------------------------
  **      0 |   1        2          3            0        100
  **      1 |   1        1          4            4         4
@@ -33,44 +33,43 @@ int columna(int c){
 }
 
 int estadoFinal(int e){
-    switch(e){
-    case 0: case 1: case 2: case 3:
-        return 0;
-    }
-    return 1;
+	switch(e){
+		case 0: case 1: case 2: case 3:
+			return 0;
+	}
+	return 1;
 }
 
 Token scanner (){
-    Token token;
+	Token token;
 	int estadoActual = 0;
 	static int tablaTT[4][5] = {{1, 2, 3, 0, 100},
-	{1, 1, 4, 4, 4},
-	{5, 2, 5, 5, 5},
-	{6, 6, 3, 6, 6}};
+				    {1, 1, 4, 4, 4},
+				    {5, 2, 5, 5, 5},
+		  		    {6, 6, 3, 6, 6}};
 
 	do{
-        input = getchar();
-        estadoActual = tablaTT[estadoActual][columna(input)];
+		input = getchar();
+        	estadoActual = tablaTT[estadoActual][columna(input)];
 	}while(!estadoFinal(estadoActual));
 
 	switch(estadoActual){
-	    case 4:
-            token = INDENTIFICADOR;
+		case 4:
+			token = INDENTIFICADOR;
 			break;
-        case 5:
+        	case 5:
 			token = CONSTANTE;
 			break;
 		case 6:
 			token = ERROR;
 			break;
-        case 100:
-            token = FDT;
-            break;
+        	case 100:
+            		token = FDT;
+            		break;
 		default:
 			break;
-    }
+	}
+	ungetc(input, stdin);
 
-    ungetc(input, stdin);
-
-    return token;
+	return token;
 }
