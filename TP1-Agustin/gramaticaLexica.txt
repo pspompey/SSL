@@ -4,11 +4,11 @@ gramatica lexica
 
 <operadorMultiplicativo> -> uno de * /
 
-<Identificador> -> <letra> {<letra o d�gito>}
+<Identificador> -> <letra> {<letra o digito>}
 
-<constante> -> <d�gito> {<d�gito>}
+<constante> -> <digito> {<digito>}
 
-<letra o d�gito> -> uno de <letra> <d�gito>
+<letra o digito> -> uno de <letra> <digito>
 
 <letra> -> una de a-z A-Z
 
