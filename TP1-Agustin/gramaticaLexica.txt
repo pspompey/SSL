@@ -1,0 +1,23 @@
+gramatica lexica
+
+<token> -> uno de <identificador> <constante> <palabraReservada> <operadorAditivo> <asignacion> <caracterPuntuacion> <operadorMultiplicativo>
+
+<operadorMultiplicativo> -> uno de * /
+
+<Identificador> -> <letra> {<letra o d�gito>}
+
+<constante> -> <d�gito> {<d�gito>}
+
+<letra o d�gito> -> uno de <letra> <d�gito>
+
+<letra> -> una de a-z A-Z
+
+<digito> -> uno de 0-9
+
+<palabraReservada> -> una de programa, fin, variables, codigo, definir, leer, escribir
+
+<operadorAditivo> -> uno de + -
+
+<asignacion> -> <-
+
+<caracterPuntuacion> -> uno de ( ) , ; //
