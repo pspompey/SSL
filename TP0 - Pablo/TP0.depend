@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1526862268 source:/home/jyp/Escritorio/FacultadPablo/SSL/TP0/scanner.c
+	"scanner.h"
+
+1526861588 /home/jyp/Escritorio/FacultadPablo/SSL/TP0/scanner.h
+	<ctype.h>
+	<stdio.h>
+
+1526865166 source:/home/jyp/Escritorio/FacultadPablo/SSL/TP0/main.c
+	"scanner.h"
+	<stdlib.h>
+
+1528067866 source:/home/jyp/Escritorio/FacultadPablo/SSL/SSL/TP0 - Pablo/main.c
+	"scanner.h"
+	<stdlib.h>
+	<string.h>
+
+1528069441 /home/jyp/Escritorio/FacultadPablo/SSL/SSL/TP0 - Pablo/scanner.h
+	<ctype.h>
+	<stdio.h>
+	<stdbool.h>
+
+1528069993 source:/home/jyp/Escritorio/FacultadPablo/SSL/SSL/TP0 - Pablo/scanner.c
+	"scanner.h"
+
