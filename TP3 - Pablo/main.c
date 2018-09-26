@@ -20,6 +20,7 @@ int main() {
                 break;
 	}
 	}
+	printf("Token: Fin de Archivo\n");
 	puts("-------totales-------");
 	printf("Identificadores: %d\nConstantes: %d\nErrores: %d\n", ids, ctes, errores);
 	return 0;
