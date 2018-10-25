@@ -40,7 +40,7 @@ declaraciones : DEFINIR IDENTIFICADOR '.' restoDeclaraciones
               | error '.'
               ;
 
-restoDeclaraciones : DEFINIR IDENTIFICADOR '.' restoDeclaraciones {printf("%s\n", "asignacion");}
+restoDeclaraciones : DEFINIR IDENTIFICADOR '.' restoDeclaraciones {printf("%s\n", "definir");}
                    | %empty
 		   ;
 
